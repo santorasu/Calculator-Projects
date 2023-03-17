@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="result" readonly>
+      <button onclick="clearResult()">C</button>
+      <button onclick="calculate('/')">÷</button>
+      <button onclick="calculate('*')">x</button>
+      <button onclick="calculate('-')">-</button>
+      <button onclick="calculate('+')">+</button>
+      <button onclick="calculate('7')">7</button>
+      <button onclick="calculate('8')">8</button>
+      <button onclick="calculate('9')">9</button>
+      <button onclick="calculate('4')">4</button>
+      <button onclick="calculate('5')">5</button>
+      <button onclick="calculate('6')">6</button>
+      <button onclick="calculate('1')">1</button>
+      <button onclick="calculate('2')">2</button>
+      <button onclick="calculate('3')">3</button>
+      <button onclick="calculate('0')">0</button>
+      <button onclick="calculate('.')">.</button>
+      <button onclick="getResult()">=</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+css
+
+.calculator {
+    width: 220px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+  button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  js
+  let result = document.getElementById('result');
+
+function calculate(value) {
+  result.value += value;
+}
+
+function getResult() {
+  result.value = eval(result.value);
+}
+
+function clearResult() {
+  result.value = '';
+}
